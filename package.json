@@ -1,7 +1,7 @@
 {
-  "name": "ayellowpaper.serialized-dictionary",
-  "version": "1.0.0",
-  "displayName": "Serialized Dictionary",
+  "name": "com.mrrobinofficial.serialized-dictionary",
+  "version": "0.1.0",
+  "displayName": "Serialized Dictionary (MrRobin)",
   "unity": "2021.3",
   "description": "Serialized Dictionary enables you to serialize dictionaries, including a very easy to use, native-feeling editor, search, duplicate keys in editor for testing and debugging and much more.",
   "category": "Libraries",
@@ -24,8 +24,9 @@
     "tool"
   ],
   "author": {
-    "name": "ayellowpaper",
-    "url": "https://github.com/ayellowpaper"
+    "name": "Robin Johannesson",
+    "email": "mrrobin123mail@gmail.com",
+    "url": "https://github.com/MrRobinOfficial"
   },
   "license": "MIT",
   "hideInEditor": false

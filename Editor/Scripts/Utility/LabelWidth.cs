@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections.Editor
+namespace MrRobinOfficial.SerializedDictionary.Editor
 {
     public struct LabelWidth : IDisposable
     {

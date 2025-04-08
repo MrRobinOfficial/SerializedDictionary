@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections.Editor.Data
+namespace MrRobinOfficial.SerializedDictionary.Editor.Data
 {
     [System.Serializable]
     internal class ElementData

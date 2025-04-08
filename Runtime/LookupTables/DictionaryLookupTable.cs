@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AYellowpaper.SerializedCollections
+namespace MrRobinOfficial.SerializedDictionary
 {
     internal class DictionaryLookupTable<TKey, TValue> : IKeyable
     {
         private SerializedDictionary<TKey, TValue> _dictionary;
-        private Dictionary<TKey, List<int>> _occurences = new Dictionary<TKey, List<int>>();
+        private Dictionary<TKey, List<int>> _occurences;
 
         private static readonly List<int> EmptyList = new List<int>();
 
@@ -18,8 +18,15 @@ namespace AYellowpaper.SerializedCollections
             _dictionary = dictionary;
         }
 
+        private void InitializeOccurencesIfNull()
+        {
+            _occurences ??= new Dictionary<TKey, List<int>>(_dictionary.Comparer);
+        }
+
         public IReadOnlyList<int> GetOccurences(object key)
         {
+            InitializeOccurencesIfNull();
+
             if (key is TKey castKey && _occurences.TryGetValue(castKey, out var list))
                 return list;
 
@@ -28,6 +35,7 @@ namespace AYellowpaper.SerializedCollections
 
         public void RecalculateOccurences()
         {
+            InitializeOccurencesIfNull();
             _occurences.Clear();
 
             int count = _dictionary._serializedList.Count;
@@ -75,7 +83,7 @@ namespace AYellowpaper.SerializedCollections
         public void AddKey(object key)
         {
             var entry = new SerializedKeyValuePair<TKey, TValue>();
-            entry.Key = (TKey) key;
+            entry.Key = (TKey)key;
             _dictionary._serializedList.Add(entry);
         }
     }

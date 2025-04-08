@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AYellowpaper.SerializedCollections.KeysGenerators
+namespace MrRobinOfficial.SerializedDictionary.KeysGenerators
 {
     public class KeyListGeneratorData
     {

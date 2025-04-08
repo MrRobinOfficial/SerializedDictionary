@@ -1,4 +1,4 @@
-namespace AYellowpaper.SerializedCollections
+namespace MrRobinOfficial.SerializedDictionary
 {
     public enum ModificationType
     {

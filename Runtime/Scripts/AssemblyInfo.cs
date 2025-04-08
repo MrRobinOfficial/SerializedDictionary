@@ -1,3 +1,3 @@
 ﻿using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("AYellowpaper.SerializedCollections.Editor")]
+[assembly: InternalsVisibleTo("MrRobinOfficial.SerializedDictionary.Editor")]

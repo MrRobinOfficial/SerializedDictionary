@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace AYellowpaper.SerializedCollections.KeysGenerators
+namespace MrRobinOfficial.SerializedDictionary.KeysGenerators
 {
     public class KeyListGeneratorSelectorWindow : EditorWindow
     {
@@ -25,7 +25,7 @@ namespace AYellowpaper.SerializedCollections.KeysGenerators
 
         private void OnEnable()
         {
-            VisualTreeAsset document = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Plugins/SerializedCollections/Editor/Assets/KeysGeneratorSelectorWindow.uxml");
+            VisualTreeAsset document = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Plugins/SerializedDictionary/Editor/Assets/KeysGeneratorSelectorWindow.uxml");
             var element = document.CloneTree();
             element.style.height = new StyleLength(new Length(100, LengthUnit.Percent));
             rootVisualElement.Add(element);

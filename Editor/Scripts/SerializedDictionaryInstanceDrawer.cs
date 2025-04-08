@@ -1,17 +1,19 @@
-using AYellowpaper.SerializedCollections.Editor.Data;
-using AYellowpaper.SerializedCollections.Editor.States;
-using AYellowpaper.SerializedCollections.KeysGenerators;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections.Editor
+using MrRobinOfficial.SerializedDictionary.Editor.Data;
+using MrRobinOfficial.SerializedDictionary.Editor.States;
+using MrRobinOfficial.SerializedDictionary.KeysGenerators;
+
+namespace MrRobinOfficial.SerializedDictionary.Editor
 {
     public class SerializedDictionaryInstanceDrawer
     {
@@ -276,7 +278,7 @@ namespace AYellowpaper.SerializedCollections.Editor
 
         private (DisplayType displayType, bool canToggleListDrawer) CreateDisplaySettings(SerializedProperty property, Type type)
         {
-            bool hasCustomEditor = SCEditorUtility.HasDrawerForType(type);
+            bool hasCustomEditor = SCEditorUtility.HasDrawerForType(type, property.propertyType == SerializedPropertyType.ManagedReference);
             bool isGenericWithChildren = property.propertyType == SerializedPropertyType.Generic && property.hasVisibleChildren;
             bool isArray = property.isArray && property.propertyType != SerializedPropertyType.String;
             bool canToggleListDrawer = isArray || (isGenericWithChildren && hasCustomEditor);

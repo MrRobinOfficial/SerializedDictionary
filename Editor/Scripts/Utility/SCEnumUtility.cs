@@ -6,7 +6,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections.Editor
+namespace MrRobinOfficial.SerializedDictionary.Editor
 {
     internal static class SCEnumUtility
     {

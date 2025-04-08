@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
 using System.Linq;
-using AYellowpaper.SerializedCollections.Editor.Data;
+using MrRobinOfficial.SerializedDictionary.Editor.Data;
 using UnityEngine;
 using System.Collections;
 
-namespace AYellowpaper.SerializedCollections.Editor
+namespace MrRobinOfficial.SerializedDictionary.Editor
 {
     internal static class SCEditorUtility
     {
@@ -22,7 +22,7 @@ namespace AYellowpaper.SerializedCollections.Editor
 
         public static bool HasKey(string path)
         {
-            return EditorPrefs.HasKey( EditorPrefsPrefix + path );
+            return EditorPrefs.HasKey(EditorPrefsPrefix + path);
         }
 
         public static void SetPersistentBool(string path, bool value)
@@ -90,15 +90,34 @@ namespace AYellowpaper.SerializedCollections.Editor
             return settings.AlwaysShowSearch ? true : pages >= settings.PageCountForSearch;
         }
 
-        public static bool HasDrawerForType(Type type)
+        public static bool HasDrawerForType(Type type, bool isPropertyManagedReferenceType)
         {
             Type attributeUtilityType = typeof(SerializedProperty).Assembly.GetType("UnityEditor.ScriptAttributeUtility");
+
             if (attributeUtilityType == null)
                 return false;
+
             var getDrawerMethod = attributeUtilityType.GetMethod("GetDrawerTypeForType", BindingFlags.Static | BindingFlags.NonPublic);
+
             if (getDrawerMethod == null)
                 return false;
-            return getDrawerMethod.Invoke(null, new object[] { type }) != null;
+
+#if UNITY_2022_3_OR_NEWER
+            if (getDrawerMethod.GetParameters().Length == 2)
+            {
+                return getDrawerMethod.Invoke(type, new object[] { type, isPropertyManagedReferenceType }) != null;
+            }
+            else if (getDrawerMethod.GetParameters().Length == 3)
+            {
+                return getDrawerMethod.Invoke(type, new object[] { type, new Type[0], isPropertyManagedReferenceType }) != null;
+            }
+            else
+            {
+                return getDrawerMethod.Invoke(type, new object[] { type }) != null;
+            }
+#else
+            return getDrawerMethod.Invoke(type, new object[] { type }) != null;
+#endif
         }
 
         internal static void AddGenericMenuItem(GenericMenu genericMenu, bool isOn, bool isEnabled, GUIContent content, GenericMenu.MenuFunction action)
@@ -125,7 +144,7 @@ namespace AYellowpaper.SerializedCollections.Editor
                 var methodInfo = classType.GetMethod("GetFieldInfoFromProperty", BindingFlags.Static | BindingFlags.NonPublic);
                 var parameters = new object[] { property, null };
                 methodInfo.Invoke(null, parameters);
-                type = (Type) parameters[1];
+                type = (Type)parameters[1];
                 return true;
             }
             catch

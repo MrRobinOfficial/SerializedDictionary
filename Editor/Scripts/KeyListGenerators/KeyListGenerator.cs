@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections.KeysGenerators
+namespace MrRobinOfficial.SerializedDictionary.KeysGenerators
 {
     public abstract class KeyListGenerator : ScriptableObject
     {

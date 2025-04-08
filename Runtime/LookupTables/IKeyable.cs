@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections
+namespace MrRobinOfficial.SerializedDictionary
 {
     internal interface IKeyable
     {

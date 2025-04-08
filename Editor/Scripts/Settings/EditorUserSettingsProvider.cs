@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
-namespace AYellowpaper.SerializedCollections.Editor
+namespace MrRobinOfficial.SerializedDictionary.Editor
 {
     public class EditorUserSettingsProvider : SettingsProvider
     {
@@ -72,7 +72,7 @@ namespace AYellowpaper.SerializedCollections.Editor
             }
             EditorGUILayout.PropertyField(_elementsPerPage);
 
-            bool changed =_serializedObject.ApplyModifiedProperties();
+            bool changed = _serializedObject.ApplyModifiedProperties();
             if (changed)
             {
                 EditorUserSettings.Save();

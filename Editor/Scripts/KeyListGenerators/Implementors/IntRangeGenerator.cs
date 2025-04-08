@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections.KeysGenerators
+namespace MrRobinOfficial.SerializedDictionary.KeysGenerators
 {
     [KeyListGenerator("Int Range", typeof(int))]
     public class IntRangeGenerator : KeyListGenerator

@@ -4,7 +4,7 @@ using System.Text;
 using UnityEditor;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections.Editor.Search
+namespace MrRobinOfficial.SerializedDictionary.Editor.Search
 {
     public class SearchResultEntry
     {

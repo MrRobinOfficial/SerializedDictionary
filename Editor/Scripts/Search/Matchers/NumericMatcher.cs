@@ -2,7 +2,7 @@ using System.Globalization;
 using UnityEditor;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections.Editor.Search
+namespace MrRobinOfficial.SerializedDictionary.Editor.Search
 {
     public class NumericMatcher : Matcher
     {

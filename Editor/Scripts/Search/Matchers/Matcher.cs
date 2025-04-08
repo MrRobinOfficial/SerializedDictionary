@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace AYellowpaper.SerializedCollections.Editor.Search
+namespace MrRobinOfficial.SerializedDictionary.Editor.Search
 {
     public abstract class Matcher
     {

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static AYellowpaper.SerializedCollections.Editor.SerializedDictionaryDrawer;
+using static MrRobinOfficial.SerializedDictionary.Editor.SerializedDictionaryDrawer;
 
-namespace AYellowpaper.SerializedCollections.Editor.States
+namespace MrRobinOfficial.SerializedDictionary.Editor.States
 {
     internal abstract class ListState
     {

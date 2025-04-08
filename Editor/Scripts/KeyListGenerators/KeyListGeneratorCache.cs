@@ -6,7 +6,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections.KeysGenerators
+namespace MrRobinOfficial.SerializedDictionary.KeysGenerators
 {
     public static class KeyListGeneratorCache
     {

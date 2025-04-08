@@ -1,7 +1,7 @@
 using System;
 using UnityEditor;
 
-namespace AYellowpaper.SerializedCollections.Editor.Search
+namespace MrRobinOfficial.SerializedDictionary.Editor.Search
 {
     public class EnumMatcher : Matcher
     {

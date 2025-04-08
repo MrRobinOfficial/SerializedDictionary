@@ -1,5 +1,6 @@
 {
-    "name": "AYellowpaper.SerializedCollections",
+    "name": "MrRobinOfficial.SerializedDictionary",
+    "rootNamespace": "MrRobinOfficial.SerializedDictionary",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

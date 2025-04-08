@@ -1,6 +1,6 @@
-﻿using AYellowpaper.SerializedCollections.Editor.Data;
-using AYellowpaper.SerializedCollections.Editor.States;
-using AYellowpaper.SerializedCollections.KeysGenerators;
+﻿using MrRobinOfficial.SerializedDictionary.Editor.Data;
+using MrRobinOfficial.SerializedDictionary.Editor.States;
+using MrRobinOfficial.SerializedDictionary.KeysGenerators;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using UnityEditor.IMGUI.Controls;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace AYellowpaper.SerializedCollections.Editor
+namespace MrRobinOfficial.SerializedDictionary.Editor
 {
     [CustomPropertyDrawer(typeof(SerializedDictionary<,>))]
     public class SerializedDictionaryDrawer : PropertyDrawer
@@ -35,7 +35,7 @@ namespace AYellowpaper.SerializedCollections.Editor
             {
                 if (_displayTypeToggleContent == null)
                 {
-                    var texture = AssetDatabase.LoadAssetAtPath<Texture>("Assets/Plugins/SerializedCollections/Editor/Assets/BurgerMenu@2x.png");
+                    var texture = AssetDatabase.LoadAssetAtPath<Texture>("Assets/Plugins/SerializedDictionary/Editor/Assets/BurgerMenu@2x.png");
                     _displayTypeToggleContent = new GUIContent(texture, "Toggle to either draw existing editor or draw properties manually.");
                 }
                 return _displayTypeToggleContent;

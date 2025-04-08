@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace AYellowpaper.SerializedCollections.KeysGenerators
+namespace MrRobinOfficial.SerializedDictionary.KeysGenerators
 {
     [CustomEditor(typeof(KeyListGenerator), true)]
     public class KeyListGeneratorEditor : UnityEditor.Editor

@@ -5,7 +5,7 @@ using UnityEditor;
 using System.IO;
 using System;
 
-namespace AYellowpaper.SerializedCollections.Editor
+namespace MrRobinOfficial.SerializedDictionary.Editor
 {
     public sealed class EditorUserSettings : ScriptableObject
     {
